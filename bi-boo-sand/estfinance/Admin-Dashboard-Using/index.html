@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard Using</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top-list">
+                <div class="logo-box">
+                    <img  src="img/logo.png"  alt=""> <!--width="100px" height="100px"-->
+                    <h1>estfinance</h1>
+                </div>
+                <i class='bx bx-x'></i>
+            </div>
+            <ul class="navlist">
+                <li class="list active">
+                    <a href="#">
+                        <i class='bx bxs-grid-alt'></i>
+                        <h3>Dashboard</h3>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class='bx bxs-wallet'></i>
+                        <h3>Cüzdanım</h3>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class='bx bx-transfer-alt' ></i>
+                        <h3>Transferler</h3>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class='bx bxs-receipt' ></i>
+                        <h3>Faturalar</h3>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class='bx bxs-credit-card' ></i>
+                        <h3>Kartlar</h3>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class='bx bxs-cog' ></i>
+                        <h3>Ayarlar</h3>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class='bx bxs-shield-alt-2'></i>
+                        <h3>Güvenlik</h3>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class='bx bxs-help-circle' ></i>
+                        <h3>Help Center</h3>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="#">
+                        <i class='bx bx-log-in'></i>
+                        <h3>Çıkış Yap</h3>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+
+
+
+
+
+        <main>
+            <div class="topSearch">
+                <div class="switch-theme">
+                    <div class="switch-icons">
+                        <span class="sun ">
+                            <i class='bx bxs-sun'></i>
+                        </span>
+                        <span class="moon active">
+                            <i class='bx bxs-moon' ></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="searchBox">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+
+            <div class="details-box">
+                <div class="content">
+                    <div class="income">
+                        <div class="left-content">
+                            <div class="badge">
+                                <i style="color: #050706;" class='bx bx-arrow-back' ></i>
+                            </div>
+                            <div class="info">
+                                <span>
+                                    Gelir
+                                </span>
+                                <h4>$23,455</h4>
+                            </div>
+                        </div>
+
+                        <div class="right-content">
+                            <div class="top">
+                                <i class='bx bxs-down-arrow'></i>
+                                <p>- 0.3%</p>
+                            </div>
+                            <span>30 Günlük</span>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- canvas -->
+                        <canvas id="myChartOne" height="100px"></canvas>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="outcome">
+                        <div class="left-content">
+                            <div class="badge">
+                                <i style="color: #FADB3F;" class='bx bx-arrow-back' ></i>
+                            </div>
+                            <div class="info">
+                                <span>
+                                    Gider
+                                </span>
+                                <h4>$74,645</h4>
+                            </div>
+                        </div>
+
+                        <div class="right-content">
+                            <div class="top">
+                                <i class='bx bxs-up-arrow'></i>
+                                <p>+ 0.5 %</p>
+                            </div>
+                            <span>30 Günlük</span>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- canvas -->
+                        <canvas id="myChartTwo" height="100px"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chartBox">
+                <div class="main-text">
+                    <h2>Overflow</h2>
+                    <div class="legend-box">
+                        <button onclick="toggleData(0)" class="first">Bu Hafta</button>
+                        <button onclick="toggleData(1)" class="second">Geçen Hafta</button>
+                        <span>Hafta <i class="bx bxs-down-arrow"></i></span>
+                    </div>
+                </div>
+                <div >
+                    <!-- canvas -->
+                    <canvas id="myChartThree" height="250px"></canvas>
+                </div>
+            </div>
+
+            <div class="chartBox">
+                <div class="main-text">
+                    <h2>Aktiviteler</h2>
+                    <div class="legend-box">
+                        <span>Hafta <i class="bx bxs-down-arrow"></i></span>
+                    </div>
+                </div>
+               <div class="details-chart">
+                <div style="width: 100%; height: 220px;">
+                    <!-- canvas -->
+                    <canvas id="myChartFour"></canvas>
+                </div>
+                <div class="info-box">
+                    <div class="info">
+                        <div class="legend-box">
+                            <i class='bx bxs-circle'></i>
+                            <h3>Aylık</h3>
+                        </div>
+                        <span>26%</span>
+                    </div>
+                    <div class="info">
+                        <div class="legend-box">
+                            <i class='bx bxs-circle'></i>
+                            <h3>Market</h3>
+                        </div>
+                        <span>34%</span>
+                    </div>
+                    <div class="info">
+                        <div class="legend-box">
+                            <i class='bx bxs-circle'></i>
+                            <h3>Abonelikler</h3>
+                        </div>
+                        <span>10%</span>
+                    </div>
+                    <div class="info">
+                        <div class="legend-box">
+                            <i class='bx bxs-circle'></i>
+                            <h3>Seyehat</h3>
+                        </div>
+                        <span>15%</span>
+                    </div>
+                    <div class="info">
+                        <div class="legend-box">
+                            <i class='bx bxs-circle'></i>
+                            <h3>Diğer</h3>
+                        </div>
+                        <span>17%</span>
+                    </div>
+                </div>
+               </div>
+            </div>
+
+            <div class="transactionBox">
+                <div class="main-text">
+                    <h2>İşlem</h2>
+                    <div class="legend-box">
+                        <a href="#">Aylık</a>
+                        <a href="#">Haftalık</a>
+                        <a href="#" class="active">Bugün</a>
+                    </div>
+                </div>
+
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>İsim</th>
+                            <th>Miktar</th>
+                            <th>Tarih</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="img/wix.png" alt="">Canva</td>
+                            <td>$17.21</td>
+                            <td>03 Şubat 2023</td>
+                            <td><span class="completed">Tamamlanmış</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><img src="img/picMonkey.jpg" alt="">picMonkey</td>
+                            <td>$17.21</td>
+                            <td>03 Şubat 2023</td>
+                            <td><span class="completed">Tamamlanmış</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/amazon.png" alt="">Amazon</td>
+                            <td>$17.21</td>
+                            <td>03 Şubat 2023</td>
+                            <td><span class="completed">Tamamlanmış</span></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/Sony.jpg" alt="">Sony</td>
+                            <td>$17.21</td>
+                            <td>03 Şubat 2023</td>
+                            <td><span class="cancled">İptal Edildi</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </main>
+
+        <div class="right">
+            <div class="header-right">
+                <div class="menuIcon">
+                    <i class='bx bx-menu-alt-right'></i>
+                </div>
+
+                    <div class="topIcons">
+                    <div class="icon">
+                        <i class='bx bx-message-square-detail bx-tada' ></i>
+                        <span>3</span>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-bell bx-tada' ></i>
+                        <span>2</span>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-cog ' id="settings-icon" ></i>
+                    </div>
+                    </div>
+
+                <div class="profile">
+                    <div class="name">
+                        <p>Esta Çiğdem Kahya</p>
+                        <span>@estacigdemkahya</span>
+                    </div>
+                    <div class="pic">
+                        <img src="img/pp/pp.png" alt="">
+                        <i class='bx bxs-chevron-down'></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-info">
+                <div class="main-text">
+                    <h2 style="color: #FADB3F;">Kartlarım</h2>
+                    <div class="icon" id="uyuz">
+                        <i class='bx bx-plus' ></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-cog' id="funny"></i>
+                    </div>
+                </div>
+
+                <!-- swiper js kullanıldı -->
+                <div class="card mySwiper">
+                    <div class="card-list swiper-wrapper">
+                        <div class="card-item swiper-slide">
+                            <div class="card-header">
+                                <span class="logo">
+                                    <img src="img/card-Images/logo.png" alt="">
+                                    <h5>Master Card</h5>
+                                </span>
+                                <img  class="chip" src="img/card-Images/chip.png" alt="">
+                            </div>
+                            <div class="card-details">
+                                <div class="name-number">
+                                    
+                                    <h5 class="number">
+                                        xxxx xx xx xxxx 2917
+                                    </h5>
+                                </div>
+                                <div class="valid-date">
+                                    <h5 class="name">Esta Çiğdem Kahya</h5>
+                                    <div class="valid-thru">
+                                        <h6>valid thru</h6>
+                                        <h5>20/09</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item swiper-slide card-item2">
+                            <div class="card-header">
+                                <span class="logo">
+                                    <img src="img/card-Images/logo.png" alt="">
+                                    <h5>Master Card</h5>
+                                </span>
+                                <img  class="chip" src="img/card-Images/chip.png" alt="">
+                            </div>
+                            <div class="card-details">
+                                <div class="name-number">
+                                    
+                                    <h5 class="number">
+                                        xxxx xx xx xxxx 2917
+                                    </h5>
+                                </div>
+                                <div class="valid-date">
+                                    <h5 class="name">Esta Çiğdem Kahya</h5>
+                                    <div class="valid-thru">
+                                        <h6>valid thru</h6>
+                                        <h5>20/09</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item swiper-slide card-item3">
+                            <div class="card-header">
+                                <span class="logo">
+                                    <img src="img/card-Images/logo.png" alt="">
+                                    <h5>Master Card</h5>
+                                </span>
+                                <img  class="chip" src="img/card-Images/chip.png" alt="">
+                            </div>
+                            <div class="card-details">
+                                <div class="name-number">
+                                    
+                                    <h5 class="number">
+                                        xxxx xx xx xxxx 2917
+                                    </h5>
+                                </div>
+                                <div class="valid-date">
+                                    <h5 class="name">Esta Çiğdem Kahya</h5>
+                                    <div class="valid-thru">
+                                        <h6>valid thru</h6>
+                                        <h5>20/09</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item swiper-slide card-item4">
+                            <div class="card-header">
+                                <span class="logo">
+                                    <img src="img/card-Images/logo.png" alt="">
+                                    <h5>Master Card</h5>
+                                </span>
+                                <img  class="chip" src="img/card-Images/chip.png" alt="">
+                            </div>
+                            <div class="card-details">
+                                <div class="name-number">
+                                    
+                                    <h5 class="number">
+                                        xxxx xx xx xxxx 2917
+                                    </h5>
+                                </div>
+                                <div class="valid-date">
+                                    <h5 class="name">Esta Çiğdem Kahya</h5>
+                                    <div class="valid-thru">
+                                        <h6>valid thru</h6>
+                                        <h5>20/09</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    
+                     <div class="pagination">
+                        <div class="swiper-button-prev"><i class='bx bx-chevron-left'></i></div>
+                        <div class="swiper-button-next"><i class='bx bx-chevron-right'></i></div>
+                     </div>
+                </div>
+
+                <div class="card-details">
+                    <h2>Kart Bilgileri</h2>
+
+                    <div class="all-info-card">
+                        <div class="info-card-item">
+                            <p>Bakiye</p>
+                            <span class="balance">$42.124</span>
+                        </div>
+                        <div class="info-card-item">
+                            <p>Cart adı</p>
+                            <span>Main Card</span>
+                        </div>
+                        <div class="info-card-item">
+                            <p>Cart Numarası</p>
+                            <span>xxxx xx xx xxxx 2357</span>
+                        </div>
+                        <div class="info-card-item">
+                            <p>Bank</p>
+                            <span>XXX Banka</span>
+                        </div>
+                        <div class="info-card-item">
+                            <p>Name</p>
+                            <span>Esta Çiğdem Kahya</span>
+                        </div>
+                        <div class="info-card-item">
+                            <p>valid thru</p>
+                            <span>06/29</span>
+                        </div>
+                    </div>
+
+                    <div class="manageBtn">
+                        <a href="#">Kartı Yönet</a>
+                    </div>
+                    <div  class="transferBtn">
+                        <a href="#">Transfer</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="friends">
+                <div class="main-text">
+                    <h2>Arkadaşlar</h2>
+                    <div class="searchBox">
+                        <i class="bx bx-search"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp1.png" alt="">  
+                        <div class="friendName">
+                            <h2>Charlotte Flugel</h2>
+                            <span>@charlotteflugel</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp2.png" alt="">  
+                        <div class="friendName">
+                            <h2>Gilbert Bougainvillea</h2>
+                            <span>@gilbertbougainvillea</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp3.png" alt="">  
+                        <div class="friendName">
+                            <h2>Claudia Hodgins</h2>
+                            <span>@claudiahodgins</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp4.png" alt="">  
+                        <div class="friendName">
+                            <h2>Cattleya Baudelaire</h2>
+                            <span>@cattleyabaudelaire</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp5.png" alt="">  
+                        <div class="friendName">
+                            <h2>Iris Cannary</h2>
+                            <span>@ıriscannary</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp6.png" alt="">  
+                        <div class="friendName">
+                            <h2>Leon Stephanotis</h2>
+                            <span>@leonstephanotis</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp7.png" alt="">  
+                        <div class="friendName">
+                            <h2>Benedict Blue</h2>
+                            <span>@benedictblue</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+
+                <div class="friendBox">
+                    <div class="service">
+                        <img src="img/pp/fp8.png" alt="">  
+                        <div class="friendName">
+                            <h2>Dietfried Bougain.</h2>
+                            <span>@dietfriedbougainvillea</span>
+                        </div>
+                    </div>
+                    <div class="messageIcon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </div>
+                </div>
+            </div>
+
+           
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- carts link -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
