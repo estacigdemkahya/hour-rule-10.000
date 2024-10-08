@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul class="navlist">
+            <li class="navLink"><a href="#" class="navItem active">Home</a></li>
+            <li class="navLink"><a href="#" class="navItem">About</a></li>
+            <li class="navLink"><a href="#" class="navItem">Services</a></li>
+            <li class="navLink"><a href="#" class="navItem">Content</a></li>
+            <button class="login-btn" id="openBtn">Login</button>
+        </ul>
+    </header>
+
+    <div class="container-form">
+        <div class="form-box login-page">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="inputBox">
+                    <input type="email" id="login-email" required>
+                    <label for="login-email">Email</label>
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" id="login-password" required>
+                    <label for="login-password">Password</label>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class="remember">
+                    <div class="checkBox">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember Me</label>
+                    </div>
+                    <a href="#" class="forget">Forget Password?</a>
+                </div>
+
+                <div class="inputBox">
+                    <input type="submit" value="Login">
+                </div>
+                <p>Don't have an account? <a href="#" class="logoutLink">Logout</a></p>
+            </form>
+        </div>
+
+        <div class="form-box loginout-page">
+            <h2>Logout</h2>
+            <form action="#">
+                <div class="inputBox">
+                    <input type="text" id="logout-username" required>
+                    <label for="logout-username">Username</label>
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="inputBox">
+                    <input type="email" id="logout-email" required>
+                    <label for="logout-email">Email</label>
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" id="logout-password" required>
+                    <label for="logout-password">Password</label>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class="remember">
+                    <div class="checkBox">
+                        <input type="checkbox" id="terms-check">
+                        <label for="terms-check">I agree to the terms & conditions</label>
+                    </div>
+                </div>
+
+                <div class="inputBox">
+                    <input type="submit" value="Logout">
+                </div>
+                <p>Already have an account? <a href="#" class="loginLink">Login</a></p>
+            </form>
+        </div>
+
+        <div class="close-form">
+            <i class='bx bx-x'></i> 
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
